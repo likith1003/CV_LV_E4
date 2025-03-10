@@ -8,7 +8,7 @@
 <body>
     <h1>Welcome to the web page created by class based views</h1>
     {% for school in schools %}
-      <h1>{{school.sname}}:---------:{{school.princy}}</h1>
-    {% endfor %}
+      <h1><a href="{% url 'viewschool' school.pk %}">{{school.sname}}</a>:---------:{{school.princy}}</h1>
+    {% endfor %}  
 </body>
 </html>

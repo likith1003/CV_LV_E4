@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>{{school.sname}}</h1>
+    <h1>{{school.princy}}</h1>
+    <h1>{{school.pno}}</h1>
+    <h1>{{school.add}}</h1>
+
+   {% if school.schools.all %}
+   <table>
+    <tr>
+        <th>Student Name</th>
+        <th>Student Pno</th>
+        <th>Student Age</th>
+        <th>Student Address</th>
+    </tr>
+    {% for student in school.schools.all %}
+      <td>{{student.stdname}}</td>
+      <td>{{student.stdpno}}</td>
+      <td>{{student.stdage}}</td>
+      <td>{{student.stdadd}}</td>
+    {% endfor %}
+</table>
+{% else %}
+<h1>No sTudents yet...! so <a href="{% url 'Addstd' %}">click</a> Here to add the students</h1>
+   {% endif %}
+    <a href="{% url 'update_school' school.pk %}"><button>update_school</button></a>
+    <a href="{% url 'delete_school' school.pk %}"><button>Delete School</button></a>
+    </center> 
+
+</body>
+</html>

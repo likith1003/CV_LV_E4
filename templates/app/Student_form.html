@@ -6,15 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to the web page created by class based view</h1>
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        {% if form.sname.value %}
-          <input type="submit" value="Update School">
-        {% else %}
-          <input type="submit" value="insert school">
-        {% endif %}
+        <input type="submit" value="Add_Student">
     </form>
 </body>
 </html>
